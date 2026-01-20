@@ -1,16 +1,17 @@
-import React from 'react'
-import Sidebar from '../components/sidebar/Sidebar'
-import Header from '../components/Header/Header'
+import React from "react";
+import Sidebar from "../components/sidebar/Sidebar";
+import Header from "../components/Header/Header";
+import { Outlet } from "react-router-dom";
 const AdminDashboard = () => {
   return (
-    <div>
+    <div className="flex">
       <Sidebar />
-      <div>
-        <Header/>
-
+      <div className="w-full flex flex-col">
+        <Header />
+        <Outlet />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;

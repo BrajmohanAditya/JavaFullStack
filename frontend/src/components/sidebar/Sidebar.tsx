@@ -8,6 +8,7 @@ import {
   IconVaccine,
 } from "@tabler/icons-react";
 import { Avatar, Text } from "@mantine/core";
+import { NavLink } from "react-router-dom";
 
 const links = [
   {
@@ -44,20 +45,47 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-red-200 flex flex-col items-center pt-3">
-      <div className="text-red-500 flex gap-1 items-center ">
-        <IconHeartbeat size={40} stroke={2.5} />
-        <span className="font-heading text-3xl">Pulse</span>
-      </div>
+    <div className="flex">
+      <div className="w-64">
+        <div className="w-64 fixed bg-dark flex flex-col  gap-7 items-center h-screen overflow-y-scroll">
+          <div className="fixed z-[500] py-3 bg-dark text-primary-400 flex gap-1 items-center  ">
+            <IconHeartbeat size={40} stroke={2.5} />
+            <span className="font-heading text-3xl">Pulse</span>
+          </div>
 
-      <div className="flex flex-col gap-1 items-center">
-        <div className="p-1 bg-white rounded-full shadow-xl">
-          <Avatar variant="filled" src="avatar.jpg" radius="xl" size={60} />
+          <div className="flex flex-col  mt-20 gap-5">
+            <div className="flex flex-col gap-1 items-center">
+              <div className="p-1 bg-white rounded-full shadow-xl">
+                <Avatar
+                  variant="filled"
+                  src="avatar.jpg"
+                  radius="xl"
+                  size={60}
+                />
+              </div>
+              <span className="font-medium text-light">Marshal</span>
+              <Text c="dimmed" size="xs" className="text-light">
+                Admin
+              </Text>
+            </div>
+            <div className="flex flex-col gap-1">
+              {links.map((link) => {
+                return (
+                  <NavLink
+                    to={link.url}
+                    key={link.url}
+                    className={({ isActive }) =>
+                      ` text-light flex items-center gap-3 w-full font-medium  px-4 py-5 rounded-lg ${isActive ? "bg-primary-400" : "hover:bg-gray-100 hover:text-dark"} cursor-pointer `
+                    }
+                  >
+                    {link.icon}
+                    <span>{link.name}</span>
+                  </NavLink>
+                );
+              })}
+            </div>
+          </div>
         </div>
-        <span className="font-medium">Marshal</span>
-        <Text c="dimmed" size="xs">
-          Admin
-        </Text>
       </div>
     </div>
   );
