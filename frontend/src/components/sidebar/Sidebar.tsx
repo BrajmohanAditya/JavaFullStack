@@ -50,7 +50,7 @@ const Sidebar = () => {
         <div className="w-64 fixed bg-dark flex flex-col  gap-7 items-center h-screen overflow-y-scroll">
           <div className="fixed z-[500] py-3 bg-dark text-primary-400 flex gap-1 items-center  ">
             <IconHeartbeat size={40} stroke={2.5} />
-            <span className="font-heading text-3xl">Pulse</span>
+            <span className="font-heading font-semibold text-3xl">Pulse</span>
           </div>
 
           <div className="flex flex-col  mt-20 gap-5">

@@ -4,8 +4,9 @@ import { IconHeartbeat } from "@tabler/icons-react";
 import { useForm } from "@mantine/form";
 import { handleControlKeyDown } from "@mantine/dates";
 import { Link } from "react-router-dom";
+import LoginPage from "./LoginPage";
 
-const LoginPage = () => {
+const RegisterPage = () => {
 
   const form = useForm<{
     email: string;
@@ -57,14 +58,14 @@ const LoginPage = () => {
           />
 
           <Button type="submit" fullWidth size="md" radius="md" color="pink">
-            Login
+            Register
           </Button>
 
-          <div className="text-neutral-100 text-sm self-center">Don't have an account? <Link to="/register" className=" hover:underline">Register</Link> </div>
+          <div className="text-neutral-100 text-sm self-center">Do you have an account? <Link to="/login" className=" hover:underline">Login</Link> </div>
         </form>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
