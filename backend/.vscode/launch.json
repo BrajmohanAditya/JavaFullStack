@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-UserMsApplication<UserMs>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.hms.user.UserMsApplication",
+      "projectName": "UserMs",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
